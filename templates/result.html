@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+
+{% block title %}
+Prediction Result | AI Health Symptom Checker
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-4">
+
+    <!-- Page Title -->
+    <div class="text-center mb-4">
+        <h1 class="text-primary">
+            <i class="fa-solid fa-heart-pulse"></i>
+            AI Prediction Result
+        </h1>
+        <p class="text-muted">
+            Machine Learning Disease Prediction Report
+        </p>
+    </div>
+
+    <div class="row">
+
+        <!-- LEFT SIDE -->
+        <div class="col-lg-8">
+
+            <!-- Disease -->
+            <div class="card shadow mb-4">
+                <div class="card-header bg-danger text-white">
+                    <h4>Predicted Disease</h4>
+                </div>
+                <div class="card-body">
+                    <h2 class="text-danger">
+                        {{ disease }}
+                    </h2>
+                </div>
+            </div>
+
+            <!-- Confidence -->
+            <div class="card shadow mb-4">
+                <div class="card-header bg-success text-white">
+                    <h4>Confidence Score</h4>
+                </div>
+
+                <div class="card-body">
+                    <h2>{{ confidence }} %</h2>
+
+                    <div class="progress" style="height:30px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated"
+                             role="progressbar"
+                             style="width: {{ confidence | float }}%;"
+                             aria-valuenow="{{ confidence }}"
+                             aria-valuemin="0"
+                             aria-valuemax="100">
+                            {{ confidence }}%
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Symptoms -->
+            <div class="card shadow mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h4>Selected Symptoms</h4>
+                </div>
+
+                <div class="card-body">
+                    <ul class="list-group">
+                        {% for symptom in symptoms %}
+                        <li class="list-group-item">
+                            <i class="fa-solid fa-check text-success"></i>
+                            {{ symptom.replace("_"," ") }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Recommendation -->
+            <div class="card shadow mb-4">
+                <div class="card-header bg-warning">
+                    <h4>Health Recommendation</h4>
+                </div>
+                <div class="card-body">
+                    <p>{{ recommendation }}</p>
+                </div>
+            </div>
+
+            
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="col-lg-4">
+
+            <!-- Actions -->
+            <div class="card shadow mb-4">
+                <div class="card-header bg-dark text-white">
+                    <h5>Actions</h5>
+                </div>
+                <div class="card-body">
+
+                    <a href="{{ url_for('download_report') }}"
+                       class="btn btn-danger w-100 mb-3">
+                        <i class="fa-solid fa-file-pdf"></i> Download PDF
+                    </a>
+
+                    <a href="{{ url_for('report') }}"
+                       class="btn btn-secondary w-100 mb-3">
+                        <i class="fa-solid fa-file-lines"></i> View Report
+                    </a>
+
+                    <a href="{{ url_for('dashboard') }}"
+                       class="btn btn-primary w-100">
+                        <i class="fa-solid fa-arrow-left"></i> Predict Again
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- Symptom Chart -->
+<div class="card shadow mb-4">
+    <div class="card-header bg-success text-white">
+        Symptoms Chart
+    </div>
+
+    <div class="card-body text-center">
+
+        <img src="{{ url_for('static', filename='graphs/symptom_bar.png') }}"
+             class="img-fluid"
+             alt="Symptoms Chart">
+
+    </div>
+</div>
+
+<!-- Confidence Chart -->
+<div class="card shadow">
+    <div class="card-header bg-primary text-white">
+        Confidence Chart
+    </div>
+
+    <div class="card-body text-center">
+
+        <img src="{{ url_for('static', filename='graphs/confidence_bar.png') }}"
+             class="img-fluid"
+             alt="Confidence Chart">
+
+    </div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="alert alert-warning mt-5">
+        <strong>Medical Disclaimer</strong>
+        <hr>
+        This prediction is generated using Machine Learning and Artificial Intelligence.
+        It is for educational purposes only and is not a medical diagnosis.
+        Always consult a qualified doctor.
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+
+==========================================
+        AI HEALTH REPORT
+==========================================
+
+Date:
+29-06-2026
+
+Time:
+10:06 AM
+
+------------------------------------------
+
+Symptoms
+
+fever, headache, breathlessness, diarrhea, loss_of_smell
+
+------------------------------------------
+
+Predicted Disease
+
+COVID-19
+
+------------------------------------------
+
+Confidence Score
+
+0.26%
+
+------------------------------------------
+
+AI Recommendation
+
+Suggested care for COVID-19: Rest, hydration, and consult doctor if symptoms persist.
+
+------------------------------------------
+
+DISCLAIMER
+
+This prediction is generated using
+Machine Learning.
+
+It is NOT a medical diagnosis.
+
+Consult a healthcare professional for
+proper diagnosis and treatment.
+
+==========================================

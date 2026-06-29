@@ -1,0 +1,293 @@
+{% extends "base.html" %}
+
+{% block title %}
+AI Health Symptom Checker
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="py-5">
+
+<div class="row align-items-center">
+
+<div class="col-lg-6">
+
+<h1 class="display-4 fw-bold text-primary">
+
+AI Health Symptom Checker
+
+</h1>
+
+<p class="lead mt-3">
+
+Predict possible health conditions using Machine Learning,
+Artificial Intelligence, Voice Recognition, and an AI Health Assistant.
+
+</p>
+
+<div class="mt-4">
+
+<a href="{{ url_for('login') }}"
+class="btn btn-primary btn-lg me-3">
+
+<i class="fa-solid fa-stethoscope"></i>
+
+Start Prediction
+
+</a>
+
+<a href="{{ url_for('register') }}"
+class="btn btn-outline-primary btn-lg">
+
+Create Account
+
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+<hr>
+
+<!-- Features -->
+
+<section class="py-5">
+
+<div class="text-center mb-5">
+
+<h2 class="fw-bold">
+
+Features
+
+</h2>
+
+<p class="text-muted">
+
+Everything needed for an intelligent healthcare assistant.
+
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+
+<div class="card shadow h-100">
+
+<div class="card-body text-center">
+
+<i class="fa-solid fa-brain fa-3x text-primary mb-3"></i>
+
+<h4>AI Disease Prediction</h4>
+
+<p>
+
+Predict diseases using a trained
+Machine Learning model.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card shadow h-100">
+
+<div class="card-body text-center">
+
+<i class="fa-solid fa-microphone fa-3x text-success mb-3"></i>
+
+<h4>Voice Input</h4>
+
+<p>
+
+Speak your symptoms instead of typing.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card shadow h-100">
+
+<div class="card-body text-center">
+
+<i class="fa-solid fa-robot fa-3x text-danger mb-3"></i>
+
+<h4>AI Chatbot</h4>
+
+<p>
+
+Ask health-related questions and receive AI-powered guidance.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card shadow h-100">
+
+<div class="card-body text-center">
+
+<i class="fa-solid fa-file-pdf fa-3x text-warning mb-3"></i>
+
+<h4>PDF Reports</h4>
+
+<p>
+
+Generate downloadable health reports with charts.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card shadow h-100">
+
+<div class="card-body text-center">
+
+<i class="fa-solid fa-chart-column fa-3x text-info mb-3"></i>
+
+<h4>Visual Analytics</h4>
+
+<p>
+
+View confidence scores and symptom charts.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card shadow h-100">
+
+<div class="card-body text-center">
+
+<i class="fa-solid fa-moon fa-3x text-secondary mb-3"></i>
+
+<h4>Dark Mode</h4>
+
+<p>
+
+Switch between Light and Dark themes.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<hr>
+
+<!-- Statistics -->
+
+<section class="py-5">
+
+<div class="row text-center">
+
+<div class="col-md-3">
+
+<h2 class="text-primary">20+</h2>
+
+<p>Diseases Supported</p>
+
+</div>
+
+<div class="col-md-3">
+
+<h2 class="text-success">11</h2>
+
+<p>Symptoms</p>
+
+</div>
+
+<div class="col-md-3">
+
+<h2 class="text-danger">95%</h2>
+
+<p>Prediction Accuracy*</p>
+
+</div>
+
+<div class="col-md-3">
+
+<h2 class="text-warning">24/7</h2>
+
+<p>AI Assistant</p>
+
+</div>
+
+</div>
+
+<p class="text-center text-muted mt-3">
+*Illustrative figure. Actual performance depends on your training dataset.
+</p>
+
+</section>
+
+<hr>
+
+<!-- Call To Action -->
+
+<section class="text-center py-5">
+
+<h2 class="fw-bold">
+
+Start Your Health Assessment Today
+
+</h2>
+
+<p class="lead">
+
+Enter your symptoms and receive an AI-assisted prediction,
+confidence score, charts, and a downloadable PDF report.
+
+</p>
+
+<a href="{{ url_for('login') }}"
+class="btn btn-lg btn-primary">
+
+Get Started
+
+</a>
+
+</section>
+
+{% endblock %}

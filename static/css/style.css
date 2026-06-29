@@ -1,0 +1,1363 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===========================
+   Root Variables
+=========================== */
+
+:root{
+
+    --primary:#0d6efd;
+    --secondary:#6c757d;
+    --success:#198754;
+    --danger:#dc3545;
+    --warning:#ffc107;
+    --info:#0dcaf0;
+
+    --light:#f8f9fa;
+    --dark:#212529;
+
+    --body:#eef5fb;
+
+    --card:#ffffff;
+
+    --radius:18px;
+
+    --shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+}
+
+/* ===========================
+   Reset
+=========================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:var(--body);
+
+    color:#333;
+
+    line-height:1.6;
+
+}
+
+/* ===========================
+   Scrollbar
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#ddd;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+/* ===========================
+   Navbar
+=========================== */
+
+.navbar{
+
+    padding:15px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.navbar-brand{
+
+    font-size:1.5rem;
+
+    font-weight:700;
+
+}
+
+.nav-link{
+
+    font-weight:500;
+
+    margin-left:12px;
+
+}
+
+.nav-link:hover{
+
+    color:#ffd54f !important;
+
+}
+
+/* ===========================
+   Hero
+=========================== */
+
+.hero{
+
+    padding:80px 0;
+
+}
+
+.hero h1{
+
+    font-size:3rem;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+.hero p{
+
+    font-size:1.2rem;
+
+    margin-top:20px;
+
+    color:#555;
+
+}
+
+.hero img{
+
+    max-width:100%;
+
+    animation:float 3s ease-in-out infinite;
+
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.btn{
+
+    border-radius:50px;
+
+    transition:.3s;
+
+    font-weight:600;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.btn-primary{
+
+    box-shadow:0 5px 15px rgba(13,110,253,.25);
+
+}
+
+.btn-success{
+
+    box-shadow:0 5px 15px rgba(25,135,84,.25);
+
+}
+
+.btn-danger{
+
+    box-shadow:0 5px 15px rgba(220,53,69,.25);
+
+}
+
+/* ===========================
+   Cards
+=========================== */
+
+.card{
+
+    border:none;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+
+    overflow:hidden;
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.card-header{
+
+    font-weight:600;
+
+    font-size:1.1rem;
+
+}
+
+.card-body{
+
+    padding:25px;
+
+}
+
+/* ===========================
+   Feature Cards
+=========================== */
+
+.feature-card{
+
+    text-align:center;
+
+    padding:35px;
+
+}
+
+.feature-card i{
+
+    font-size:50px;
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+}
+
+.feature-card h4{
+
+    margin-bottom:10px;
+
+    font-weight:600;
+
+}
+
+/* ===========================
+   Forms
+=========================== */
+
+.form-control{
+
+    border-radius:12px;
+
+    padding:12px;
+
+}
+
+.form-control:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:none;
+
+}
+
+/* ===========================
+   Alerts
+=========================== */
+
+.alert{
+
+    border-radius:15px;
+
+}
+
+/* ===========================
+   Progress Bar
+=========================== */
+
+.progress{
+
+    height:25px;
+
+    border-radius:20px;
+
+}
+
+.progress-bar{
+
+    font-weight:600;
+
+}
+
+/* ===========================
+   Tables
+=========================== */
+
+.table{
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+}
+
+/* ===========================
+   Footer
+=========================== */
+
+footer{
+
+    margin-top:80px;
+
+    padding:25px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    text-align:center;
+
+}
+
+footer p{
+
+    margin-bottom:5px;
+
+}
+
+/* ===========================
+   Floating Animation
+=========================== */
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===========================
+   Fade In Animation
+=========================== */
+
+.fade-in{
+
+    animation:fadeIn .8s ease-in-out;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ======================================================
+   LOGIN & REGISTER
+====================================================== */
+
+.auth-card{
+
+    max-width:520px;
+
+    margin:auto;
+
+}
+
+.auth-card .card{
+
+    border-radius:20px;
+
+}
+
+.auth-card .card-body{
+
+    padding:40px;
+
+}
+
+.auth-icon{
+
+    font-size:70px;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+}
+
+.input-group-text{
+
+    border-radius:12px 0 0 12px;
+
+}
+
+.form-label{
+
+    font-weight:600;
+
+}
+
+.form-text{
+
+    font-size:13px;
+
+}
+
+/* Password Strength */
+
+#passwordStrength{
+
+    font-weight:600;
+
+    margin-top:10px;
+
+}
+
+/* ======================================================
+   DASHBOARD
+====================================================== */
+
+.dashboard-header{
+
+    margin-bottom:30px;
+
+}
+
+.dashboard-header h2{
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+.dashboard-card{
+
+    margin-bottom:25px;
+
+}
+
+.dashboard-card .card-header{
+
+    font-size:18px;
+
+    font-weight:700;
+
+}
+
+.dashboard-card .card-body{
+
+    min-height:180px;
+
+}
+
+/* ======================================================
+   SYMPTOMS
+====================================================== */
+
+.symptom-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:12px;
+
+}
+
+.symptom-checkbox{
+
+    transform:scale(1.2);
+
+    margin-right:8px;
+
+}
+
+.form-check{
+
+    padding:12px;
+
+    border-radius:12px;
+
+    background:#427272;
+
+    transition:.3s;
+
+}
+
+.form-check:hover{
+
+    background:#708888;
+
+    cursor:pointer;
+
+}
+
+.form-check-label{
+
+    font-weight:500;
+
+}
+
+/* ======================================================
+   VOICE BUTTON
+====================================================== */
+
+#voiceBtn{
+
+    width:100%;
+
+    border-radius:50px;
+
+    padding:15px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        box-shadow:0 0 0 0 rgba(220,53,69,.5);
+
+    }
+
+    70%{
+
+        box-shadow:0 0 0 20px rgba(220,53,69,0);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 0 0 rgba(220,53,69,0);
+
+    }
+
+}
+
+/* ======================================================
+   RESULT PAGE
+====================================================== */
+
+.result-title{
+
+    font-size:32px;
+
+    font-weight:700;
+
+    color:var(--danger);
+
+}
+
+.result-card{
+
+    margin-bottom:25px;
+
+}
+
+.progress{
+
+    margin-top:15px;
+
+}
+
+.progress-bar{
+
+    font-size:15px;
+
+}
+
+.list-group-item{
+
+    border:none;
+
+    border-bottom:1px solid #eee;
+
+}
+
+.list-group-item:last-child{
+
+    border-bottom:none;
+
+}
+
+/* ======================================================
+   REPORT PAGE
+====================================================== */
+
+.report-box{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.report-box pre{
+
+    white-space:pre-wrap;
+
+    font-family:Consolas,monospace;
+
+    font-size:15px;
+
+}
+
+.report-actions .btn{
+
+    margin-bottom:12px;
+
+}
+
+/* ======================================================
+   CHARTS
+====================================================== */
+
+.chart-image{
+
+    width:100%;
+
+    border-radius:15px;
+
+    box-shadow:var(--shadow);
+
+}
+
+/* ======================================================
+   INFORMATION CARDS
+====================================================== */
+
+.info-card{
+
+    text-align:center;
+
+    padding:30px;
+
+}
+
+.info-card i{
+
+    font-size:50px;
+
+    margin-bottom:15px;
+
+}
+
+.info-card h5{
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+/* ======================================================
+   BADGES
+====================================================== */
+
+.badge{
+
+    padding:8px 12px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+}
+
+/* ======================================================
+   BUTTON HOVER EFFECTS
+====================================================== */
+
+.btn-primary:hover{
+
+    background:#0b5ed7;
+
+}
+
+.btn-success:hover{
+
+    background:#157347;
+
+}
+
+.btn-danger:hover{
+
+    background:#bb2d3b;
+
+}
+
+.btn-warning:hover{
+
+    background:#ffca2c;
+
+}
+
+/* ======================================================
+   IMAGES
+====================================================== */
+
+.img-fluid{
+
+    border-radius:15px;
+
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media(max-width:992px){
+
+.hero{
+
+    text-align:center;
+
+}
+
+.hero h1{
+
+    font-size:2.5rem;
+
+}
+
+.dashboard-card{
+
+    margin-top:20px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.navbar-brand{
+
+    font-size:20px;
+
+}
+
+.hero h1{
+
+    font-size:2rem;
+
+}
+
+.card-body{
+
+    padding:20px;
+
+}
+
+.result-title{
+
+    font-size:28px;
+
+}
+
+#voiceBtn{
+
+    font-size:16px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.hero{
+
+    padding:40px 0;
+
+}
+
+.hero h1{
+
+    font-size:1.8rem;
+
+}
+
+.btn-lg{
+
+    width:100%;
+
+    margin-bottom:10px;
+
+}
+
+.form-check{
+
+    padding:10px;
+
+}
+
+}
+
+/* ===========================
+   CHATBOT
+=========================== */
+
+#chatBox{
+
+    height:500px;
+
+    overflow-y:auto;
+
+    background:#f8f9fa;
+
+    border-radius:15px;
+
+    padding:20px;
+
+    border:1px solid #ddd;
+
+}
+
+.message{
+
+    margin-bottom:20px;
+
+    animation:fadeIn .4s ease;
+
+}
+
+.message.user{
+
+    text-align:right;
+
+}
+
+.message.bot{
+
+    text-align:left;
+
+}
+
+.message .bubble{
+
+    display:inline-block;
+
+    padding:12px 18px;
+
+    border-radius:20px;
+
+    max-width:80%;
+
+    word-wrap:break-word;
+
+}
+
+.message.user .bubble{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+.message.bot .bubble{
+
+    background:#fff;
+
+    border:1px solid #ddd;
+
+}
+
+/* ===========================
+   CHAT INPUT
+=========================== */
+
+.chat-input{
+
+    margin-top:15px;
+
+}
+
+.chat-input input{
+
+    border-radius:30px;
+
+}
+
+.chat-input button{
+
+    border-radius:30px;
+
+}
+
+/* ===========================
+   REPORT
+=========================== */
+
+.report-container{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.report-title{
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+
+.report-section{
+
+    margin-bottom:25px;
+
+}
+
+.report-section h4{
+
+    color:var(--primary);
+
+}
+
+/* ===========================
+   GLASS EFFECT
+=========================== */
+
+.glass{
+
+    background:rgba(255,255,255,.7);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:20px;
+
+    border:1px solid rgba(255,255,255,.4);
+
+}
+
+/* ===========================
+   LOADER
+=========================== */
+
+.loader{
+
+    width:60px;
+
+    height:60px;
+
+    border:6px solid #ddd;
+
+    border-top:6px solid var(--primary);
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+    margin:auto;
+
+}
+
+@keyframes spin{
+
+    100%{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ===========================
+   TOAST
+=========================== */
+
+.toast-custom{
+
+    position:fixed;
+
+    top:20px;
+
+    right:20px;
+
+    z-index:9999;
+
+    min-width:280px;
+
+    border-radius:15px;
+
+    box-shadow:var(--shadow);
+
+}
+
+/* ===========================
+   ICONS
+=========================== */
+
+.icon-lg{
+
+    font-size:55px;
+
+}
+
+.icon-xl{
+
+    font-size:70px;
+
+}
+
+/* ===========================
+   SECTION TITLE
+=========================== */
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:50px;
+
+}
+
+.section-title h2{
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+.section-title p{
+
+    color:#666;
+
+}
+
+/* ===========================
+   HOVER
+=========================== */
+
+.hover-up{
+
+    transition:.3s;
+
+}
+
+.hover-up:hover{
+
+    transform:translateY(-8px);
+
+}
+
+/* ===========================
+   SHADOWS
+=========================== */
+
+.shadow-soft{
+
+    box-shadow:
+
+    0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.shadow-large{
+
+    box-shadow:
+
+    0 20px 40px rgba(0,0,0,.15);
+
+}
+
+/* ===========================
+   TEXT COLORS
+=========================== */
+
+.text-primary{
+
+    color:var(--primary)!important;
+
+}
+
+.text-success{
+
+    color:var(--success)!important;
+
+}
+
+.text-danger{
+
+    color:var(--danger)!important;
+
+}
+
+/* ===========================
+   BACKGROUNDS
+=========================== */
+
+.bg-gradient{
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    #0d6efd,
+
+    #00c6ff
+
+    );
+
+    color:#fff;
+
+}
+
+/* ===========================
+   UTILITIES
+=========================== */
+
+.rounded-xl{
+
+    border-radius:25px;
+
+}
+
+.pointer{
+
+    cursor:pointer;
+
+}
+
+.mt-40{
+
+    margin-top:40px;
+
+}
+
+.mb-40{
+
+    margin-bottom:40px;
+
+}
+
+.p-40{
+
+    padding:40px;
+
+}
+
+/* ===========================
+   IMAGE EFFECTS
+=========================== */
+
+img{
+
+    transition:.3s;
+
+}
+
+img:hover{
+
+    transform:scale(1.02);
+
+}
+
+/* ===========================
+   PRINT
+=========================== */
+
+@media print{
+
+body{
+
+    background:#fff;
+
+}
+
+.navbar,
+
+footer,
+
+.btn,
+
+#voiceBtn{
+
+    display:none;
+
+}
+
+.card{
+
+    box-shadow:none;
+
+    border:1px solid #aaa;
+
+}
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+#chatBox{
+
+    height:350px;
+
+}
+
+.message .bubble{
+
+    max-width:95%;
+
+}
+
+.report-container{
+
+    padding:20px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.card{
+
+    margin-bottom:20px;
+
+}
+
+.section-title h2{
+
+    font-size:28px;
+
+}
+
+.icon-xl{
+
+    font-size:50px;
+
+}
+
+}
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+.slide-up{
+
+    animation:slideUp .6s ease;
+
+}
+
+@keyframes slideUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.zoom{
+
+    animation:zoom .5s;
+
+}
+
+@keyframes zoom{
+
+    from{
+
+        transform:scale(.9);
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ===========================
+   END
+=========================== */

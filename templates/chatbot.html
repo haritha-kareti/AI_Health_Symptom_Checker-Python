@@ -1,0 +1,229 @@
+{% extends "base.html" %}
+
+{% block title %}
+AI Health Assistant
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-9">
+
+            <div class="card shadow-lg border-0 rounded-4">
+
+                <!-- Header -->
+
+                <div class="card-header bg-primary text-white">
+
+                    <div class="d-flex justify-content-between align-items-center">
+
+                        <div>
+
+                            <h3 class="mb-1">
+
+                                <i class="fa-solid fa-robot"></i>
+
+                                AI Health Assistant
+
+                            </h3>
+
+                            <small>
+
+                                Ask health-related questions and receive AI-powered health guidance.
+
+                            </small>
+
+                        </div>
+
+                        <div>
+
+                            <button
+                                class="btn btn-light btn-sm"
+                                onclick="clearChat()">
+
+                                <i class="fa-solid fa-trash"></i>
+
+                                Clear
+
+                            </button>
+
+                            <button
+                                class="btn btn-warning btn-sm"
+                                onclick="exportChat()">
+
+                                <i class="fa-solid fa-download"></i>
+
+                                Export
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Chat Window -->
+
+                <div
+                    id="chatBox"
+                    class="card-body">
+
+                </div>
+
+                <!-- Footer -->
+
+                <div class="card-footer">
+
+                    <div class="input-group">
+
+                        <input
+
+                            type="text"
+
+                            id="userMessage"
+
+                            class="form-control"
+
+                            placeholder="Describe your symptoms or ask a health question..."
+
+                            autocomplete="off">
+
+                        <button
+
+                            class="btn btn-outline-danger"
+
+                            id="voiceBtn"
+
+                            title="Voice Input">
+
+                            <i class="fa-solid fa-microphone"></i>
+
+                        </button>
+
+                        <button
+
+                            class="btn btn-success"
+
+                            id="sendBtn">
+
+                            <i class="fa-solid fa-paper-plane"></i>
+
+                            Send
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Quick Questions -->
+
+            <div class="card mt-4 shadow">
+
+                <div class="card-header bg-info text-white">
+
+                    <strong>
+
+                        Frequently Asked Questions
+
+                    </strong>
+
+                </div>
+
+                <div class="card-body">
+
+                    <button
+                        class="btn btn-outline-primary m-1"
+                        onclick="quickQuestion('I have fever and cough')">
+
+                        Fever & Cough
+
+                    </button>
+
+                    <button
+                        class="btn btn-outline-success m-1"
+                        onclick="quickQuestion('I have headache')">
+
+                        Headache
+
+                    </button>
+
+                    <button
+                        class="btn btn-outline-danger m-1"
+                        onclick="quickQuestion('I have vomiting')">
+
+                        Vomiting
+
+                    </button>
+
+                    <button
+                        class="btn btn-outline-warning m-1"
+                        onclick="quickQuestion('What is dengue?')">
+
+                        Dengue
+
+                    </button>
+
+                    <button
+                        class="btn btn-outline-secondary m-1"
+                        onclick="quickQuestion('How can I reduce a sore throat?')">
+
+                        Sore Throat
+
+                    </button>
+
+                    <button
+                        class="btn btn-outline-dark m-1"
+                        onclick="quickQuestion('What should I do if I have chest pain?')">
+
+                        Chest Pain
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Disclaimer -->
+
+            <div class="alert alert-warning mt-4">
+
+                <h5>
+
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+
+                    Medical Disclaimer
+
+                </h5>
+
+                <hr>
+
+                This chatbot provides AI-generated educational information only.
+
+                It is not a substitute for diagnosis or treatment by a qualified healthcare professional.
+
+                If you have severe symptoms or a medical emergency, seek immediate medical attention.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/voice.js') }}"></script>
+
+{% endblock %}

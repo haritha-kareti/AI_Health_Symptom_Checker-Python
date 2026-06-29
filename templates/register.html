@@ -1,0 +1,307 @@
+{% extends "base.html" %}
+
+{% block title %}
+Register | AI Health Symptom Checker
+{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center align-items-center py-5">
+
+    <div class="col-lg-6 col-md-8">
+
+        <div class="card shadow-lg border-0 rounded-4">
+
+            <div class="card-body p-5">
+
+                <div class="text-center mb-4">
+
+                    <i class="fa-solid fa-user-plus fa-4x text-success mb-3"></i>
+
+                    <h2 class="fw-bold">
+                        Create Account
+                    </h2>
+
+                    <p class="text-muted">
+                        Register to access the AI Health Symptom Checker
+                    </p>
+
+                </div>
+
+                <form
+                    action="{{ url_for('register') }}"
+                    method="POST"
+                    onsubmit="return validateRegisterForm()">
+
+                    <!-- Full Name -->
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            Full Name
+
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control form-control-lg"
+                            name="fullname"
+                            placeholder="Enter your full name"
+                            required>
+
+                    </div>
+
+                    <!-- Email -->
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                            Email Address
+
+                        </label>
+
+                        <input
+                            type="email"
+                            class="form-control form-control-lg"
+                            name="email"
+                            placeholder="Enter your email"
+                            required>
+
+                    </div>
+
+                    <!-- Password -->
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            Password
+
+                        </label>
+
+                        <div class="input-group">
+
+                            <input
+                                type="password"
+                                class="form-control form-control-lg"
+                                id="password"
+                                name="password"
+                                placeholder="Create password"
+                                required>
+
+                            <button
+                                class="btn btn-outline-secondary"
+                                type="button"
+                                onclick="togglePassword('password','eye1')">
+
+                                <i
+                                    id="eye1"
+                                    class="fa-solid fa-eye">
+                                </i>
+
+                            </button>
+
+                        </div>
+
+                        <div class="form-text">
+
+                            Password should contain at least
+                            8 characters.
+
+                        </div>
+
+                    </div>
+
+                    <!-- Confirm Password -->
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            Confirm Password
+
+                        </label>
+
+                        <div class="input-group">
+
+                            <input
+                                type="password"
+                                class="form-control form-control-lg"
+                                id="confirmPassword"
+                                placeholder="Confirm password"
+                                required>
+
+                            <button
+                                class="btn btn-outline-secondary"
+                                type="button"
+                                onclick="togglePassword('confirmPassword','eye2')">
+
+                                <i
+                                    id="eye2"
+                                    class="fa-solid fa-eye">
+                                </i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Password Strength -->
+
+                    <div class="mb-3">
+
+                        <div
+                            id="passwordStrength"
+                            class="small text-muted">
+
+                            Password Strength
+
+                        </div>
+
+                    </div>
+
+                    <!-- Submit -->
+
+                    <div class="d-grid">
+
+                        <button
+                            class="btn btn-success btn-lg">
+
+                            <i class="fa-solid fa-user-check"></i>
+
+                            Register
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+                <hr>
+
+                <div class="text-center">
+
+                    Already have an account?
+
+                    <a href="{{ url_for('login') }}">
+
+                        Login Here
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script>
+
+function togglePassword(id, icon){
+
+    let input = document.getElementById(id);
+
+    let eye = document.getElementById(icon);
+
+    if(input.type==="password"){
+
+        input.type="text";
+
+        eye.className="fa-solid fa-eye-slash";
+
+    }
+
+    else{
+
+        input.type="password";
+
+        eye.className="fa-solid fa-eye";
+
+    }
+
+}
+
+function validateRegisterForm(){
+
+    let password =
+        document.getElementById("password").value;
+
+    let confirm =
+        document.getElementById("confirmPassword").value;
+
+    if(password.length < 8){
+
+        alert("Password must contain at least 8 characters.");
+
+        return false;
+
+    }
+
+    if(password !== confirm){
+
+        alert("Passwords do not match.");
+
+        return false;
+
+    }
+
+    return true;
+
+}
+
+document.getElementById("password").addEventListener(
+
+"input",
+
+function(){
+
+    let password = this.value;
+
+    let strength =
+        document.getElementById("passwordStrength");
+
+    if(password.length < 6){
+
+        strength.innerHTML =
+        "<span class='text-danger'>Weak Password</span>";
+
+    }
+
+    else if(password.length < 10){
+
+        strength.innerHTML =
+        "<span class='text-warning'>Medium Password</span>";
+
+    }
+
+    else{
+
+        strength.innerHTML =
+        "<span class='text-success'>Strong Password</span>";
+
+    }
+
+});
+
+</script>
+
+{% endblock %}
